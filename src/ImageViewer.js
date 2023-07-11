@@ -27,7 +27,7 @@ export default function ImageViewer({ $target, onImageClose }) {
 	this.render();
 
 	window.addEventListener("keyup", e => {
-		if (e.key === "Delete") {
+		if (e.key === "Escape") {
 			onImageClose();
 		}
 	});
