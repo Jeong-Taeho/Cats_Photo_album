@@ -3,9 +3,10 @@ import { request } from './api/api.js';
 import ImageViewer from './components/ImageViewer.js';
 import Loading from './components/Loading.js';
 import Breadcrumb from './components/Breadcrumb.js';
-import { API_END_POINT } from './api/api.js';
+import { VITE_API_END_POINT } from './api/api.js';
 
 export default function App({ $target }) {
+  console.log(import.meta.env);
   this.state = {
     isRoot: true,
     isLoading: false,
@@ -59,7 +60,7 @@ export default function App({ $target }) {
       if (node.type === 'FILE') {
         this.setState({
           ...this.state,
-          selectedImageUrl: `${API_END_POINT}/static${node.filePath}`,
+          selectedImageUrl: `${VITE_API_END_POINT}/static${node.filePath}`,
         });
       }
     },
